@@ -1,1 +1,187 @@
 
+/* =========================================
+   SCRATCH UNIVERSE
+   SISTEMA VISUAL PRINCIPAL
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --background: #080b16;
+  --surface: #111629;
+  --surface-light: #1a2140;
+  --primary: #8055ff;
+  --secondary: #24a9ff;
+  --text: #ffffff;
+  --muted: #929bb5;
+  --border: rgba(255,255,255,.09);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1400px, 94%);
+  margin: auto;
+}
+
+header {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4%;
+  border-bottom: 1px solid var(--border);
+  background: rgba(8,11,22,.94);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(15px);
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0 15px;
+  width: min(430px, 45%);
+}
+
+.search-box input {
+  width: 100%;
+  height: 44px;
+  color: white;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.hero {
+  margin: 35px auto;
+  padding: 65px 45px;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 80% 20%, #6941ce66, transparent 40%),
+    linear-gradient(120deg,#151c39,#101329);
+  border: 1px solid var(--border);
+}
+
+.hero h1 {
+  font-size: clamp(32px,5vw,58px);
+  font-weight: 900;
+  max-width: 700px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 550px;
+}
+
+.hero button {
+  margin-top: 25px;
+  padding: 14px 24px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(110deg,var(--primary),var(--secondary));
+  color: white;
+  font-weight: 800;
+}
+
+.section-title {
+  font-size: 24px;
+  margin: 35px 0 20px;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(210px,1fr));
+  gap: 20px;
+  padding-bottom: 50px;
+}
+
+.game-card {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  transition: .25s;
+}
+
+.game-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+  box-shadow: 0 12px 35px #8055ff22;
+}
+
+.game-card img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+}
+
+.game-info {
+  padding: 14px;
+}
+
+.game-info h3 {
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.game-info p {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.loading, .empty-state {
+  color: var(--muted);
+  padding: 30px;
+  text-align: center;
+}
+
+footer {
+  padding: 30px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
